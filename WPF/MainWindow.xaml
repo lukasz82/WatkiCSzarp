@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Testy" Height="344.488" Width="604.001">
+    <Grid Margin="0,0,12,17">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="385*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="233" Margin="90,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="345"/>
+        <Button x:Name="button" Content="Stwórz listę standardową drogą" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="188" Click="CreateListStandard" Grid.ColumnSpan="3"/>
+        <Label x:Name="label" Content="Testy" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="67" Grid.ColumnSpan="2"/>
+        <Label x:Name="label2" Content="Iteracje" Grid.Column="2" HorizontalAlignment="Left" Margin="99,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.238,0.494"/>
+        <TextBox x:Name="IterationBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="159,11,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="StandardLabel" Content="0 m/s" Grid.Column="2" HorizontalAlignment="Left" Margin="108,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.539,0.709" Height="26" Width="134" Background="White"/>
+        <Label x:Name="LabelTicksStandard" Content="ticks" Grid.Column="2" HorizontalAlignment="Left" Margin="309,70,0,0" VerticalAlignment="Top" Width="103" Background="White"/>
+        <Label x:Name="label1" Content="Czas wykonywania wątku" Grid.Column="2" HorizontalAlignment="Left" Margin="99,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Ilość cykli CPU" Grid.Column="2" HorizontalAlignment="Left" Margin="301,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="SecondsLabel" Content="0 s" Grid.Column="2" HorizontalAlignment="Left" Margin="108,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.099,-0.495" Width="134" Background="White"/>
+
     </Grid>
 </Window>

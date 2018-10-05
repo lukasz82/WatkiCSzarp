@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,49 @@ namespace WPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void CreateListStandard(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                button.IsEnabled = false;
+                await TestAsync();
+                button.IsEnabled = true;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private async Task TestAsync()
+        {
+            int iterationsTime = int.Parse(IterationBox.Text);
+            //StandardLabel.Content = iterationsTime;
+            long elapsedMs = 0;
+            long ticks = 0;
+
+            await Task.Run(() =>
+            {
+                var watch = Stopwatch.StartNew();
+                for (int i = 0; i < iterationsTime; i++)
+                {
+                    var testList = new List<int>();
+                }
+                watch.Stop();
+                elapsedMs = watch.ElapsedMilliseconds;
+                ticks = watch.ElapsedTicks;
+            });
+
+            StandardLabel.Content = Calculatetime(elapsedMs);
+            LabelTicksStandard.Content = ticks + " ticks";
+            SecondsLabel.Content = (elapsedMs/1000) + " sek";
+        }
+
+        private string Calculatetime(long elapsedMs)
+        {
+            return elapsedMs + " m/s";
         }
     }
 }
